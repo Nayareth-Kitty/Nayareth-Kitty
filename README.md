@@ -1,50 +1,55 @@
 <div align="center">
-  <!-- Banner principal -->
-  <img src="https://i.pinimg.com/originals/a2/1b/02/a21b02130ff3315a6b0cfa0b327b8bf6.gif" width="100%" style="border-radius: 15px;"/>
-  
-  <br>
-  
-  # <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGI5ZTEyZGIzNzY4MjM0YzJmZTBmYTBjYjZiMzE3MzZmYjZiMzVlNiZlcD12MV9pbnRlcm5hbF9naWZzX3NlYXJjaCZjdD1n/L1R1tvI9svkIWwpVYr/giphy.gif" width="35" /> ¡Hola! Soy Nayareth 🐾✨
-  
-  ### 🌸 Desarrolladora Full Stack 🌸
-  
-  <img src="https://img.shields.io/badge/Team_Leader-FF69B4?style=for-the-badge&logo=github&logoColor=white" />
-  <img src="https://img.shields.io/badge/Cat_Lover-FFB6C1?style=for-the-badge&logo=smashingmagazine&logoColor=white" />
+  <!-- Banner actual: cuando subas tu nueva portada a ImgBB, reemplaza el valor de src por el enlace directo de esa imagen. -->
+  <img src="https://i.pinimg.com/originals/a2/1b/02/a21b02130ff3315a6b0cfa0b327b8bf6.gif" alt="Banner de programación con estética rosa" width="100%" />
+
+  <h1>¡Hola! Soy Nayareth 👋🐾</h1>
+  <h3>Estudiante de desarrollo de software · Junior Developer 🌱</h3>
+  <p>Aprendiendo, creando proyectos y creciendo paso a paso en el mundo de la tecnología.</p>
+
+  <img src="https://img.shields.io/badge/Junior-Developer-FF69B4?style=for-the-badge&logo=github&logoColor=white" alt="Junior Developer" />
+  <img src="https://img.shields.io/badge/En_formación-FFB6C1?style=for-the-badge&logo=bookstack&logoColor=white" alt="En formación" />
+  <img src="https://img.shields.io/badge/Cat_Lover-F48FB1?style=for-the-badge" alt="Cat lover" />
 </div>
 
----
+🌸 Sobre mí
+¡Hola! Soy Nayareth, estudiante y desarrolladora junior en formación. Me interesa crear soluciones tecnológicas útiles, escribir código cada vez más limpio y aprender buenas prácticas de desarrollo.
+- 🎓 Actualmente: estudiando y fortaleciendo mis fundamentos de programación.
+- 💻 Practicando: Python, Java y desarrollo web.
+- 🌱 Aprendiendo: bases de ciencia de datos y desarrollo de videojuegos con Godot.
+- 🧩 Me gusta: resolver problemas, aprender cosas nuevas y trabajar en equipo.
+- ✨ Mi objetivo: seguir creciendo como desarrolladora a través de proyectos y experiencia práctica.
+- 💌 Conectemos: LinkedIn
+Cada proyecto es una oportunidad para aprender algo nuevo. 🌷
 
-### 😻 Sobre mí
-Soy una desarrolladora apasionada por construir soluciones tecnológicas eficientes sin perder el estilo. Tengo gran capacidad analítica y resiliencia para resolver problemas bajo presión.
+🎀 Mi stack tecnológico
+💻 Lenguajes y programación
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
+</p>
 
-*   🐾 **Actualmente:** Construyendo proyectos ágiles en **Python, Java y desarrollo web**.
-*   🧶 **Aprendiendo:** Constantemente sobre **Data Science y Godot**.
-*   😸 **Superpoderes:** Fuerte en escucha activa, liderazgo de equipos y resolución de bugs críticos.
-*   💌 **Contacto:** [Mi LinkedIn 🔗](https://www.linkedin.com/in/nayareth-negr%C3%B3n-monroy-93b995411/?isSelfProfile=true)
+🌐 Desarrollo web
+<p>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+</p>
 
----
+🗄️ Bases de datos
+<p>
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
+</p>
 
-### 🎀 Mi Stack Tecnológico 🎀
+🎮 Explorando
+<p>
+  <img src="https://img.shields.io/badge/Godot-478CBF?style=for-the-badge&logo=godotengine&logoColor=white" alt="Godot" />
+  <img src="https://img.shields.io/badge/Data_Science-FF69B4?style=for-the-badge&logo=python&logoColor=white" alt="Ciencia de datos en aprendizaje" />
+</p>
 
-#### 💻 Desarrollo de Software
-<img src="https://img.shields.io/badge/Python-FF69B4?style=flat-square&logo=python&logoColor=white" />
-<img src="https://img.shields.io/badge/Java-FF99CC?style=flat-square&logo=java&logoColor=white" />
-<img src="https://img.shields.io/badge/Full_Stack-F48FB1?style=flat-square&logo=code&logoColor=white" />
-
-#### 🌐 Desarrollo Web y Bases de Datos
-<img src="https://img.shields.io/badge/HTML5-FF69B4?style=flat-square&logo=html5&logoColor=white" />
-<img src="https://img.shields.io/badge/CSS3-FF99CC?style=flat-square&logo=css3&logoColor=white" />
-<img src="https://img.shields.io/badge/JavaScript-F48FB1?style=flat-square&logo=javascript&logoColor=white" />
-<img src="https://img.shields.io/badge/MySQL-FFC0CB?style=flat-square&logo=mysql&logoColor=black" />
-
-#### 🎮 Otros
-<img src="https://img.shields.io/badge/Godot-478CBF?style=flat-square&logo=godot-engine&logoColor=white" />
-<img src="https://img.shields.io/badge/Data_Science-FF69B4?style=flat-square&logo=python&logoColor=white" />
-
----
-
+🐾 Un poco más sobre mi camino
+Estoy construyendo mi experiencia paso a paso, combinando lo que aprendo en mis estudios con ejercicios y proyectos propios. Por ahora, mi perfil refleja principalmente tecnologías que estoy practicando y explorando; seguiré actualizándolo a medida que crezca mi experiencia.
 <div align="center">
-  <br>
-  <h3>🐾 ¡Gracias por visitar mi perfil! 🐾</h3>
-  <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="150" style="border-radius: 10px;"/>
+  <h3>💗 ¡Gracias por visitar mi perfil! 🐱</h3>
+  <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="160" alt="Gatito usando un computador" />
+  <p><i>Aprendiendo un commit a la vez. ✨</i></p>
 </div>
