@@ -1,6 +1,6 @@
 <div align="center">
   <!-- Banner actual: cuando subas tu nueva portada a ImgBB, reemplaza el valor de src por el enlace directo de esa imagen. -->
-  <img src="https://i.pinimg.com/originals/a2/1b/02/a21b02130ff3315a6b0cfa0b327b8bf6.gif" alt="Banner de programación con estética rosa" width="100%" />
+  <img src="https://ibb.co/LhsszsJS" alt="Banner de programación con estética rosa" width="100%" />
 
   <h1>¡Hola! Soy Nayareth 👋🐾</h1>
   <h3>Estudiante de desarrollo de software · Junior Developer 🌱</h3>
