@@ -1,0 +1,126 @@
+name: Actualizar proyectos del perfil
+
+on:
+  schedule:
+    - cron: "23 12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  actualizar-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio del perfil
+        uses: actions/checkout@v4
+
+      - name: Actualizar contador y proyecto público más reciente
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python - <<'PY'
+          import datetime
+          import html
+          import json
+          import os
+          import urllib.request
+          from pathlib import Path
+
+          username = "Nayareth-Kitty"
+          profile_repo = username.lower()
+          token = os.environ.get("GH_TOKEN", "")
+          repositories = []
+
+          # Leer repositorios públicos propios (con paginación).
+          page = 1
+          while True:
+              api_url = (
+                  f"https://api.github.com/users/{username}/repos"
+                  f"?type=owner&sort=created&direction=desc&per_page=100&page={page}"
+              )
+              headers = {
+                  "Accept": "application/vnd.github+json",
+                  "User-Agent": "Nayareth-Kitty-profile-readme",
+                  "X-GitHub-Api-Version": "2022-11-28",
+              }
+              if token:
+                  headers["Authorization"] = f"Bearer {token}"
+              request = urllib.request.Request(api_url, headers=headers)
+              with urllib.request.urlopen(request, timeout=30) as response:
+                  batch = json.load(response)
+              repositories.extend(batch)
+              if len(batch) < 100:
+                  break
+              page += 1
+
+          projects = [
+              repo for repo in repositories
+              if repo.get("name", "").lower() != profile_repo
+              and not repo.get("fork", False)
+              and not repo.get("archived", False)
+              and not repo.get("private", False)
+          ]
+          projects.sort(key=lambda repo: repo.get("created_at", ""), reverse=True)
+
+          count_badge = (
+              "![Proyectos públicos](https://img.shields.io/badge/Proyectos%20p%C3%BAblicos-"
+              f"{len(projects)}-EC4899?style=for-the-badge&logo=github)"
+          )
+
+          if projects:
+              repo = projects[0]
+              description = (repo.get("description") or "Repositorio público en desarrollo.")
+              description = " ".join(description.split())[:240]
+              description = html.escape(description)
+              language = html.escape(repo.get("language") or "Tecnologías por explorar")
+              created_at = datetime.datetime.fromisoformat(
+                  repo["created_at"].replace("Z", "+00:00")
+              ).strftime("%d/%m/%Y")
+              stars = repo.get("stargazers_count", 0)
+              latest_project = (
+                  f"**[{repo['name']}]({repo['html_url']})**\n\n"
+                  f"{description}\n\n"
+                  f"`{language}` · ⭐ {stars} · Creado el {created_at}\n\n"
+                  f"[Ver repositorio ↗]({repo['html_url']})"
+              )
+          else:
+              latest_project = (
+                  "*Estoy preparando proyectos para compartirlos pronto. "
+                  "Cuando publique un repositorio público propio, aparecerá aquí.*"
+              )
+
+          readme_path = Path("README.md")
+          readme = readme_path.read_text(encoding="utf-8")
+
+          def replace_section(text, start_marker, end_marker, replacement):
+              start_index = text.find(start_marker)
+              end_index = text.find(end_marker)
+              if start_index == -1 or end_index == -1 or end_index < start_index:
+                  raise RuntimeError(
+                      f"No se encontraron correctamente los marcadores {start_marker} / {end_marker}"
+                  )
+              content_start = start_index + len(start_marker)
+              return text[:content_start] + "\n" + replacement.strip() + "\n" + text[end_index:]
+
+          readme = replace_section(
+              readme, "<!-- PROJECT-COUNT:START -->", "<!-- PROJECT-COUNT:END -->", count_badge
+          )
+          readme = replace_section(
+              readme, "<!-- LATEST-PROJECT:START -->", "<!-- LATEST-PROJECT:END -->", latest_project
+          )
+          readme_path.write_text(readme, encoding="utf-8")
+          print(f"README actualizado: {len(projects)} repositorios de proyecto público.")
+          PY
+
+      - name: Guardar los cambios si los hubo
+        run: |
+          if git diff --quiet; then
+            echo "No hay cambios que guardar."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "chore: actualizar proyectos del perfil"
+          git push
